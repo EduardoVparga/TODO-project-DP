@@ -8,7 +8,7 @@ from app.utils import (
 
 N_ROWS = 3
 
-def app(data):
+def app(db, data):
     priority_order = {"High": 1, "Medium": 2, "Low": 3}
     data.sort(key=lambda x: priority_order[x["Priority"]])
 
