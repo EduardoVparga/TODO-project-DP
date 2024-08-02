@@ -3,7 +3,6 @@ import requests
 from src.images.animal_request import (
     AnimalAPI
 )
-
 # Adapter for the cat API
 class CatAPIAdapter(AnimalAPI):
     def __init__(self):
