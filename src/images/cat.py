@@ -16,4 +16,3 @@ class CatAPIAdapter(AnimalAPI):
             return data[0]["url"]
         else:
             return None
-
