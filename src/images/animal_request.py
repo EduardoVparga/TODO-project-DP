@@ -6,7 +6,6 @@ from src.logger.init import (
 
 SOURCE = "AnimalAPI Cls"
 
-
 # Common interface
 class AnimalAPI:
     def get_animal_image(self):
@@ -24,6 +23,7 @@ class AnimalClient:
         if image_url:
             logger.activity(SOURCE, 'INFO', f"Animal image: {image_url}")
             return image_url
-
+            
         else:
             logger.activity(SOURCE, 'WARN', "Could not retrieve the animal image.")
+            

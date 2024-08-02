@@ -21,7 +21,7 @@ Installation
 
 1.  **Clone the repository**
     
-        git clone https://github.com/catalinalopezb7/DesignPatterns.git
+        git clone https://github.com/EduardoVparga/TODO-project-DP.git
         cd DesignPatterns
     
 2.  **Create a virtual environment**
@@ -49,31 +49,41 @@ Project Structure
 
     todo-app-streamlit/
     │
-    ├── app/               # Application-related files
-    │   └── components/    # UI component files
-    │       ├── card.py
-    │       ├── modal.py
-    │       ├── main.py
-    │       └── utils.py
-    ├── db/            # Database-related files (Singlenton Pattern)
+    ├── app/                            # Application-related files
+    │   ├── components/                 # UI component files
+    │   │   ├── card.py
+    │   │   └── modal.py
+    │   ├── main.py
+    │   └── utils.py
+    │
+    ├── db/                             # Database-related files (Singlenton Pattern)
     │    ├── init.py
     │    ├── StartDataScript.sql
+    │    ├── test.db
     │    └── todo.db
     │
-    ├── src/               # Source files
-    │   ├── images/        # Image-related source files (Adapter Pattern)
+    ├── src/                            # Source files
+    │   ├── images/                     # Image-related source files (Adapter Pattern)
     │   │   ├── animal_request.py
     │   │   ├── cat.py
     │   │   └── dog.py
-    │   └── logger/        # Logger-related source files (Observer Pattern)
+    │   └── logger/                     # Logger-related source files (Observer Pattern)
     │       ├── init.py
     │       ├── listeners.py
     │       └── logger.py
-    │   
+    │
+    ├── tests/                          # Test files
+    │   ├── __init__.py
+    │   ├── run_all_test.py
+    │   ├── test_db.py
+    │   ├── test_image_generator.py
+    │   └── test_logger.py
+    │
+    ├── app.log
     ├── init.py 
     ├── main.py
-    ├── requirements.txt   # Project dependencies
-    └── README.md          # This file
+    ├── requirements.txt                # Project dependencies
+    └── README.md                       # This file
 
 Contributing
 ------------
