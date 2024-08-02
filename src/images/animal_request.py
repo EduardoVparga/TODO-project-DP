@@ -5,12 +5,10 @@ from src.logger.init import (
 )
 
 SOURCE = "AnimalAPI Cls"
-
 # Common interface
 class AnimalAPI:
     def get_animal_image(self):
         raise NotImplementedError("This method must be implemented by subclasses")
-
 
 # Client using the common interface
 class AnimalClient:
