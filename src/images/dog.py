@@ -3,7 +3,6 @@ import requests
 from src.images.animal_request import (
     AnimalAPI
 )
-
 # Adapter for the dog API
 class DogAPIAdapter(AnimalAPI):
     def __init__(self):
