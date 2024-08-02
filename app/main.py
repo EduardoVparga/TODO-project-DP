@@ -1,5 +1,5 @@
 import streamlit as st
-from streamlit import Modal
+from streamlit_modal import Modal
 
 from app.components.modal import modal
 from app.utils import (
