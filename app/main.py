@@ -1,11 +1,10 @@
 import streamlit as st
-from streamlit_modal import Modal
+from streamlit import Modal
 
 from app.components.modal import modal
 from app.utils import (
     show_cards_in_rows,
 )
-
 N_ROWS = 3
 
 def app(db, data, image):
