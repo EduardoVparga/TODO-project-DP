@@ -8,7 +8,7 @@ from app.utils import (
 
 N_ROWS = 3
 
-def app(db, data):
+def app(db, data, image):
     priority_order = {"High": 1, "Medium": 2, "Low": 3}
     data.sort(key=lambda x: priority_order[x["Priority"]])
 
@@ -20,6 +20,6 @@ def app(db, data):
 
     # Display the details in the corresponding modal
     for idx, item in enumerate(data):
-        modal(idx, item, modals[idx])
+        modal(idx, item, image, modals[idx])
 
 

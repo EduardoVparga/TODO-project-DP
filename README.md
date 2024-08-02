@@ -21,7 +21,7 @@ Installation
 
 1.  **Clone the repository**
     
-        git clone https://github.com/EduardoVparga/TODO-project-DP.git
+        git clone https://github.com/catalinalopezb7/DesignPatterns.git
         cd DesignPatterns
     
 2.  **Create a virtual environment**

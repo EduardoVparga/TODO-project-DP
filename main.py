@@ -1,16 +1,22 @@
 from app.main import app
 
 from init import (
-    initialize_db
+    initialize_db,
+    image_generator,
 )
 
-def main():
 
+def main():
+    
     # Start database  
     db, data = initialize_db()
 
-    # Init application
-    app(db, data)
+    # Initialize imagen generator object
+    animal_client = image_generator()
 
-if __name__ == "__main__":
+    # Init application
+    app(db, data, animal_client)
+    
+
+if __name__ == '__main__':
     main()
