@@ -2,9 +2,11 @@ import sqlite3
 from sqlite3 import Error
 import threading
 
+from src.logger.init import (
+    logger,
+)
 
-
-
+SOURCE = 'Init DB Obj'
 
 class DataBaseConn:
     _instance = None
@@ -16,7 +18,7 @@ class DataBaseConn:
             cls._instance._db_file = db_file
             cls._instance._initialized = False
         else:
-            pass
+            logger.activity(SOURCE, 'WARN', 'Returning existing instance of DataBaseConn')
         return cls._instance
 
     def __init__(self, db_file):
@@ -32,8 +34,9 @@ class DataBaseConn:
                 connection = sqlite3.connect(self.db_file)
                 self._connection_per_thread[thread_id] = connection
 
+                logger.activity(SOURCE, 'INFO', f"Connected to SQLite database: {self.db_file} (thread {thread_id})")
             except Error as e:
-                pass
+                logger.activity(SOURCE, 'ERR', f"Error connecting to SQLite database: {e}")
                 
 
     def get_connection(self):
@@ -50,6 +53,7 @@ class DataBaseConn:
         if connection:
             connection.close()
             del self._connection_per_thread[thread_id]
+            logger.activity(SOURCE, 'INFO', f"SQLite connection closed for thread {thread_id}")
 
     def fetch_query(self, query):
         connection = self.get_connection()
@@ -62,6 +66,7 @@ class DataBaseConn:
             return [dict(zip(column_names, row)) for row in rows]
         
         except Error as e:
+            logger.activity(SOURCE, 'ERR', f"Error fetching query: {e}")
             return None
 
 
